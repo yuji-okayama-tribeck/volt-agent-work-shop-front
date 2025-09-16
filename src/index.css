@@ -1,0 +1,274 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	font-weight: 500;
+	color: #646cff;
+	text-decoration: inherit;
+}
+a:hover {
+	color: #535bf2;
+}
+
+h1 {
+	font-size: 3.2em;
+	line-height: 1.1;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: #1a1a1a;
+	color: white;
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+button:hover {
+	border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-family: inherit;
+	background-color: #1a1a1a;
+	color: white;
+	margin-right: 0.5em;
+}
+
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
+.user-card {
+	background: #383838;
+	border-radius: 12px;
+	padding: 2rem;
+	margin: 2rem 0;
+	text-align: left;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.profile-image {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.user-name {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin: 0;
+}
+
+.user-id {
+	color: #888;
+	margin: 0.25rem 0;
+}
+
+.organization {
+	color: #646cff;
+	margin: 0.25rem 0;
+}
+
+.description {
+	margin: 1rem 0;
+	line-height: 1.6;
+	white-space: pre-line;
+}
+
+.stats {
+	display: flex;
+	gap: 2rem;
+	margin: 1.5rem 0;
+}
+
+.stat {
+	text-align: center;
+}
+
+.stat-number {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #646cff;
+}
+
+.stat-label {
+	font-size: 0.9rem;
+	color: #888;
+}
+
+.search-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	margin-bottom: 2rem;
+}
+
+.loading {
+	text-align: center;
+	padding: 2rem;
+	color: #888;
+}
+
+.error {
+	text-align: center;
+	padding: 2rem;
+	color: #ff6b6b;
+	background: rgba(255, 107, 107, 0.1);
+	border-radius: 8px;
+	margin: 1rem 0;
+}
+
+/* Markdownコンテンツ用のスタイル */
+.markdown-content {
+	padding: 1rem;
+}
+
+.markdown-content h3 {
+	color: #646cff;
+	border-bottom: 2px solid #646cff;
+	padding-bottom: 0.5rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+.markdown-content h4 {
+	color: #888;
+	margin-top: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.markdown-content ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.markdown-content li {
+	margin-bottom: 0.5rem;
+	padding-left: 1rem;
+	position: relative;
+}
+
+.markdown-content li::before {
+	content: "•";
+	color: #646cff;
+	position: absolute;
+	left: 0;
+}
+
+.markdown-content strong {
+	color: #646cff;
+	font-weight: 600;
+}
+
+.markdown-content a {
+	color: #646cff;
+	text-decoration: none;
+	border-bottom: 1px dotted #646cff;
+}
+
+.markdown-content a:hover {
+	color: #535bf2;
+	border-bottom-color: #535bf2;
+}
+
+.markdown-content img {
+	display: block;
+	margin: 1rem auto;
+	border-radius: 50%;
+	max-width: 100px;
+	height: auto;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+	a:hover {
+		color: #747bff;
+	}
+	button {
+		background-color: #f9f9f9;
+		color: #213547;
+	}
+	input {
+		background-color: #f9f9f9;
+		color: #213547;
+		border-color: #ddd;
+	}
+	.user-card {
+		background: #f9f9f9;
+		color: #213547;
+	}
+	
+	.markdown-content h3 {
+		color: #747bff;
+		border-bottom-color: #747bff;
+	}
+	
+	.markdown-content h4 {
+		color: #666;
+	}
+	
+	.markdown-content li::before {
+		color: #747bff;
+	}
+	
+	.markdown-content strong {
+		color: #747bff;
+	}
+	
+	.markdown-content a {
+		color: #747bff;
+		border-bottom-color: #747bff;
+	}
+	
+	.markdown-content a:hover {
+		color: #646cff;
+		border-bottom-color: #646cff;
+	}
+}
