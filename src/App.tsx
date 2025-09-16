@@ -94,7 +94,7 @@ function App() {
 						disabled={loading}
 					/>
 					<button type="submit" disabled={loading || !qiitaId.trim()}>
-						{loading ? "取得中..." : "取得"}
+						取得
 					</button>
 				</form>
 

@@ -283,10 +283,6 @@ input {
 	border: 1px solid #333;
 }
 
-.user-info-section {
-	margin-bottom: 32px;
-}
-
 .user-header {
 	display: flex;
 	gap: 16px;
@@ -300,10 +296,6 @@ input {
 	border-radius: 50%;
 	object-fit: cover;
 	border: 2px solid #333;
-}
-
-.user-details {
-	flex: 1;
 }
 
 .user-name {

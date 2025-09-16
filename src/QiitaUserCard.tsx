@@ -20,8 +20,6 @@ interface QiitaUser {
 }
 
 interface QiitaItem {
-  rendered_body: string;
-  body: string;
   coediting: boolean;
   comments_count: number;
   created_at: string;
@@ -178,14 +176,6 @@ const QiitaUserCard: React.FC<QiitaUserCardProps> = ({ data }) => {
                   ))}
                 </div>
               )}
-
-              {/* 記事の本文プレビュー（最初の200文字程度） */}
-              <div className="item-preview">
-                {item.body.length > 200 
-                  ? `${item.body.substring(0, 200)}...` 
-                  : item.body
-                }
-              </div>
             </div>
           ))}
         </div>
