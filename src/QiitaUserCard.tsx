@@ -64,6 +64,15 @@ const QiitaUserCard: React.FC<QiitaUserCardProps> = ({ data }) => {
 
   const { userInfo, userItems } = data;
 
+  // userInfoが存在しない場合のエラーハンドリング
+  if (!userInfo) {
+    return (
+      <div className="qiita-user-card error">
+        <p>エラー: ユーザー情報が取得できませんでした。</p>
+      </div>
+    );
+  }
+
   return (
     <div className="qiita-user-card">
       {/* ユーザー情報セクション */}
@@ -144,7 +153,7 @@ const QiitaUserCard: React.FC<QiitaUserCardProps> = ({ data }) => {
       </div>
 
       {/* 投稿記事セクション */}
-      {userItems && userItems.length > 0 && (
+      {userItems && userItems.length > 0 ? (
         <div className="user-items-section">
           <h3>最近の投稿</h3>
           {userItems.map((item) => (
@@ -154,16 +163,16 @@ const QiitaUserCard: React.FC<QiitaUserCardProps> = ({ data }) => {
                   {item.title}
                 </a>
               </h4>
-              
+
               <div className="item-meta">
                 <span className="created-date">
                   {new Date(item.created_at).toLocaleDateString('ja-JP')}
                 </span>
                 <div className="item-stats">
-                  <span>❤️ {item.likes_count}</span>
-                  <span>📄 {item.stocks_count}</span>
-                  <span>👀 {item.page_views_count}</span>
-                  <span>💬 {item.comments_count}</span>
+                  {item.likes_count != null && <span>❤️ {item.likes_count}</span>}
+                  {item.stocks_count != null && <span>📄 {item.stocks_count}</span>}
+                  {item.page_views_count != null && <span>👀 {item.page_views_count}</span>}
+                  {item.comments_count != null && <span>💬 {item.comments_count}</span>}
                 </div>
               </div>
 
@@ -178,6 +187,11 @@ const QiitaUserCard: React.FC<QiitaUserCardProps> = ({ data }) => {
               )}
             </div>
           ))}
+        </div>
+      ) : (
+        <div className="user-items-section">
+          <h3>投稿記事</h3>
+          <p>投稿記事が見つかりませんでした。</p>
         </div>
       )}
     </div>
