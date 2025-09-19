@@ -11,7 +11,6 @@ function App() {
 	const fetchUserInfo = async () => {
 		if (!qiitaId.trim()) {
 			setError("ユーザーIDを入力してください");
-
 			return;
 		}
 
@@ -36,39 +35,36 @@ function App() {
 						maxTokens: 100,
 					},
 				}),
-			})
-
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
+			});
 
 			const responseData = await response.json();
 
 			if (responseData.success && responseData.data && responseData.data.text) {
 				try {
-					// textがJSON文字列の場合はパースして表示
 					const parsedData = JSON.parse(responseData.data.text);
+
+					if (parsedData.userInfo && parsedData.userInfo.type === "not_found") {
+						throw new Error(`ユーザーID「${qiitaId}」は見つかりませんでした。正しいユーザーIDを確認してください。`);
+					}
+
 					setUserInfo(parsedData);
 				} catch (parseError) {
-					// JSON パースに失敗した場合は文字列として表示
+					// parseError が Error インスタンスで、メッセージが「ユーザーが見つからない」系の場合はそのまま投げる
+					if (parseError instanceof Error && parseError.message.includes("見つかりませんでした")) {
+						throw parseError;
+					}
+
 					setUserInfo(responseData.data.text);
 				}
+			} else {
+				throw new Error("server error");
 			}
-			// 失敗時のレスポンス（textに直接エラーメッセージが含まれる場合）
-			else if (responseData.data && responseData.data.text) {
-				// エラーメッセージかどうかを判定
-				if (responseData.data.text.includes("見つかりませんでした") ||
-					responseData.data.text.includes("正しいユーザーIDを確認")) {
-					throw new Error(responseData.data.text);
-				} else {
-					throw new Error("予期しないレスポンス形式です");
-				}
+		} catch (error) {
+			if (error instanceof Error) {
+				setError(error.message);
+			} else {
+				setError("予期しないエラーが発生しました");
 			}
-			else {
-				throw new Error("Invalid response format");
-			}
-		} catch (err) {
-			setError(err instanceof Error ? err.message : "ユーザー情報の取得に失敗しました",);
 		} finally {
 			setLoading(false);
 		}
