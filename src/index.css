@@ -97,6 +97,7 @@ input {
 	height: 80px;
 	border-radius: 50%;
 	object-fit: cover;
+	background: white;
 }
 
 .user-name {
