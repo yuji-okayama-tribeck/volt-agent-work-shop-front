@@ -18,6 +18,7 @@ a {
 	color: #646cff;
 	text-decoration: inherit;
 }
+
 a:hover {
 	color: #535bf2;
 }
@@ -39,9 +40,11 @@ button {
 	cursor: pointer;
 	transition: border-color 0.25s;
 }
+
 button:hover {
 	border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
@@ -228,45 +231,49 @@ input {
 		color: #213547;
 		background-color: #ffffff;
 	}
+
 	a:hover {
 		color: #747bff;
 	}
+
 	button {
 		background-color: #f9f9f9;
 		color: #213547;
 	}
+
 	input {
 		background-color: #f9f9f9;
 		color: #213547;
 		border-color: #ddd;
 	}
+
 	.user-card {
 		background: #f9f9f9;
 		color: #213547;
 	}
-	
+
 	.markdown-content h3 {
 		color: #747bff;
 		border-bottom-color: #747bff;
 	}
-	
+
 	.markdown-content h4 {
 		color: #666;
 	}
-	
+
 	.markdown-content li::before {
 		color: #747bff;
 	}
-	
+
 	.markdown-content strong {
 		color: #747bff;
 	}
-	
+
 	.markdown-content a {
 		color: #747bff;
 		border-bottom-color: #747bff;
 	}
-	
+
 	.markdown-content a:hover {
 		color: #646cff;
 		border-bottom-color: #646cff;
@@ -396,6 +403,10 @@ input {
 	font-size: 1.2em;
 }
 
+.user-items-section p {
+	color: #fff;
+}
+
 .item-card {
 	background: #2a2a2a;
 	border-radius: 8px;
@@ -470,16 +481,16 @@ input {
 		align-items: center;
 		text-align: center;
 	}
-	
+
 	.user-stats {
 		justify-content: space-around;
 	}
-	
+
 	.item-meta {
 		flex-direction: column;
 		align-items: flex-start;
 	}
-	
+
 	.social-links {
 		justify-content: center;
 	}
