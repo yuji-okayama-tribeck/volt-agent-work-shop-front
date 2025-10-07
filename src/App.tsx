@@ -28,8 +28,6 @@ function App() {
 				body: JSON.stringify({
 					input: `Qiita ID: ${qiitaId}`,
 					options: {
-						userId: "unique-user-id",
-						conversationId: "unique-conversation-id",
 						contextLimit: 10,
 						temperature: 0.7,
 						maxTokens: 100,
