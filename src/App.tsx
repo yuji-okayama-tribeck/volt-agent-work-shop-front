@@ -28,9 +28,10 @@ function App() {
 				body: JSON.stringify({
 					input: `Qiita ID: ${qiitaId}`,
 					options: {
-						contextLimit: 10,
-						temperature: 0.7,
-						maxTokens: 100,
+						userId: "unique-user-id", // ユーザーごとに一意なIDを設定
+						conversationId: "unique-conversation-id", // 会話ごとに一意なIDを設定
+						temperature: 0.7, // 創造性の度合いを調整
+						maxTokens: 1000, // 応答の最大トークン数
 					},
 				}),
 			});
